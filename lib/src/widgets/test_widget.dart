@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 class TestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellow,
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Text('Welcome'),
+      ),
     );
   }
 }
