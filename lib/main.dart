@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:work_space/src/pages/welcome_screen.dart';
+import 'src/pages/welcome_screen.dart';
 
 void main() {
   // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

@@ -30,7 +30,8 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          ' Few 🧐 to 💪 ',
+          // ' Few 🧐 to 💪 ',
+          'How is your physique?',
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,
@@ -112,15 +113,17 @@ class _InputPageState extends State<InputPage> {
                       overlayShape:
                           RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
-                    child: Slider(
-                      value: height.toDouble(),
-                      min: 120.0,
-                      max: 220.0,
-                      onChanged: (double newValue) {
-                        setState(() {
-                          height = newValue.round();
-                        });
-                      },
+                    child: Expanded(
+                      child: Slider(
+                        value: height.toDouble(),
+                        min: 120.0,
+                        max: 220.0,
+                        onChanged: (double newValue) {
+                          setState(() {
+                            height = newValue.round();
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ],
@@ -230,6 +233,7 @@ class _InputPageState extends State<InputPage> {
                     bmiResult: calc.calculateBMI(),
                     resultText: calc.getResult(),
                     interpretation: calc.getInterpretation(),
+                    color: calc.getColor()
                   ),
                 ),
               );

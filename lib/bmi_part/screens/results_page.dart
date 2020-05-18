@@ -8,19 +8,29 @@ class ResultsPage extends StatelessWidget {
   ResultsPage(
       {@required this.interpretation,
       @required this.bmiResult,
-      @required this.resultText});
+      @required this.resultText,
+      @required this.color});
 
   final String bmiResult;
   final String resultText;
   final String interpretation;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          '👈 Re-Calclute',
-          style: TextStyle(color: Colors.amber),
+        iconTheme: IconThemeData(color: Colors.black),
+        automaticallyImplyLeading: false,
+        title: FlatButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(
+            '👈 Do it again',
+            style: TextStyle(
+              color: Colors.amber,
+              fontSize: 20,
+            ),
+          ),
         ),
         elevation: 0.2,
         backgroundColor: Colors.white,
@@ -49,7 +59,7 @@ class ResultsPage extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     resultText.toUpperCase(),
-                    style: kResultTextStyle,
+                    style: kResultTextStyle.apply(color: color),
                   ),
                   Text(
                     bmiResult,
