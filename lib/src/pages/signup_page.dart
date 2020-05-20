@@ -106,11 +106,11 @@ class _SignUppageState extends State<SignUppage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Already have an account ?',
+            'Already have an account?',
             style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
           ),
           SizedBox(
-            width: 10,
+            width: 5,
           ),
           InkWell(
             onTap: () {
@@ -136,15 +136,15 @@ class _SignUppageState extends State<SignUppage> {
       text: TextSpan(
           text: "Dr.",
           style: GoogleFonts.portLligatSans(
-            textStyle: Theme.of(context).textTheme.display1,
+            textStyle: Theme.of(context).textTheme.headline4,
             fontSize: 30,
             fontWeight: FontWeight.w700,
-            color: Colors.black,
+            color: Color(0xffe46b10),
           ),
           children: [
             TextSpan(
               text: "Hunger",
-              style: TextStyle(color: Color(0xffe46b10), fontSize: 30),
+              style: TextStyle(color: Colors.black, fontSize: 30),
             )
           ]),
     );
@@ -156,15 +156,15 @@ class _SignUppageState extends State<SignUppage> {
         _entryField(
             title: "Username",
             icon: Icon(Icons.person_outline),
-            hintText: "Your Name?"),
+            hintText: "Please enter your name"),
         _entryField(
             title: "Email id",
             icon: Icon(Icons.email),
-            hintText: "Please eneter your e-mail!"),
+            hintText: "Please eneter your E-mail"),
         _entryField(
           title: "Password",
           icon: Icon(Icons.security),
-          hintText: "Please eneter your Pass!",
+          hintText: "Please eneter your Password",
           isPassword: true,
         ),
       ],
@@ -179,6 +179,10 @@ class _SignUppageState extends State<SignUppage> {
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: <Widget>[
+              Positioned(
+                  top: -MediaQuery.of(context).size.height * .15,
+                  right: -MediaQuery.of(context).size.width * .4,
+                  child: BezierContainer()),
               Positioned(top: 40, left: 0, child: _backButton()),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20),
@@ -210,10 +214,6 @@ class _SignUppageState extends State<SignUppage> {
                 alignment: Alignment.bottomCenter,
                 child: _loginAccountLabel(),
               ),
-              Positioned(
-                  top: -MediaQuery.of(context).size.height * .15,
-                  right: -MediaQuery.of(context).size.width * .4,
-                  child: BezierContainer()),
             ],
           ),
         ),

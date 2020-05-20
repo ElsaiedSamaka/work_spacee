@@ -26,7 +26,7 @@ class _WelcomePageState extends State<WelcomePage> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             boxShadow: <BoxShadow>[
               BoxShadow(
                 color: Color(0xffdf8e33).withAlpha(100),
@@ -61,7 +61,7 @@ class _WelcomePageState extends State<WelcomePage> {
         padding: EdgeInsets.symmetric(vertical: 13),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
           border: Border.all(color: Colors.white, width: 2),
         ),
         child: Text(
@@ -78,7 +78,7 @@ class _WelcomePageState extends State<WelcomePage> {
       text: TextSpan(
           text: "Dr.",
           style: GoogleFonts.portLligatSans(
-            textStyle: Theme.of(context).textTheme.display1,
+            textStyle: Theme.of(context).textTheme.headline4,
             fontSize: 30,
             fontWeight: FontWeight.w700,
             color: Colors.black,
@@ -94,8 +94,8 @@ class _WelcomePageState extends State<WelcomePage> {
 
   Widget _extraTitle() {
     return Text(
-      "Ai Meal & recipe Planner",
-      style: TextStyle(color: Colors.black54, fontSize: 16),
+      "AI Meal & recipe Planner",
+      style: TextStyle(color: Colors.white, fontSize: 18),
     );
   }
 
@@ -114,6 +114,9 @@ class _WelcomePageState extends State<WelcomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               _title(),
+              SizedBox(
+                height: 7,
+              ),
               _extraTitle(),
               SizedBox(
                 height: 80,

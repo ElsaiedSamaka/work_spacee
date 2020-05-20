@@ -41,18 +41,18 @@ class _LoginPageState extends State<LoginPage> {
       text: TextSpan(
           text: "Dr.",
           style: GoogleFonts.portLligatSans(
-            textStyle: Theme.of(context).textTheme.display1,
+            textStyle: Theme.of(context).textTheme.headline4,
             fontSize: 30,
-            color: Colors.black,
+            color: Color(0xffe46b10),
             fontWeight: FontWeight.w700,
           ),
           children: <TextSpan>[
             TextSpan(
                 text: "Hunger",
                 style: GoogleFonts.portLligatSans(
-                  textStyle: Theme.of(context).textTheme.display1,
+                  textStyle: Theme.of(context).textTheme.headline4,
                   fontSize: 30,
-                  color: Color(0xffe46b10),
+                  color: Colors.black,
                   fontWeight: FontWeight.w700,
                 ))
           ]),
@@ -73,14 +73,17 @@ class _LoginPageState extends State<LoginPage> {
             title,
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
-          TextField(
-            obscureText: isPassword,
-            decoration: InputDecoration(
-              hintText: hintText,
-              border: InputBorder.none,
-              icon: icon,
-              fillColor: Color(0xfff3f3f4),
-              filled: true,
+          Opacity(
+            opacity: 0.75,
+            child: TextField(
+              obscureText: isPassword,
+              decoration: InputDecoration(
+                hintText: hintText,
+                border: InputBorder.none,
+                icon: icon,
+                fillColor: Color(0xfff3f3f4),
+                filled: true,
+              ),
             ),
           )
         ],
@@ -90,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _submitButton() {
     return InkWell(
-      onTap: null,
+      onTap: () {},
       child: Container(
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.symmetric(vertical: 15),
@@ -113,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
               colors: <Color>[Color(0xfffbb448), Color(0xfff7892b)]),
         ),
         child: Text(
-          "LogIn",
+          "Login",
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),
@@ -124,13 +127,13 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       children: <Widget>[
         _entryField(
-            title: "Email id",
-            hintText: "Please enter your e-mail!",
+            title: "Email",
+            hintText: "Please enter your E-mail",
             icon: Icon(Icons.email)),
         _entryField(
             title: "Password",
             isPassword: true,
-            hintText: "Please enter your Pass!",
+            hintText: "Please enter your password",
             icon: Icon(Icons.security)),
       ],
     );
@@ -205,7 +208,7 @@ class _LoginPageState extends State<LoginPage> {
                     topRight: Radius.circular(5)),
               ),
               alignment: Alignment.center,
-              child: Text('Log in with Facebook',
+              child: Text('Login with Facebook',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -253,7 +256,7 @@ class _LoginPageState extends State<LoginPage> {
                     topRight: Radius.circular(5)),
               ),
               alignment: Alignment.center,
-              child: Text('sign In with Gmail',
+              child: Text('Login with Gmail',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -273,11 +276,11 @@ class _LoginPageState extends State<LoginPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Don\'t have an account ?',
+            'Don\'t have an account?',
             style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
           ),
           SizedBox(
-            width: 10,
+            width: 5,
           ),
           InkWell(
             onTap: () {
@@ -305,6 +308,10 @@ class _LoginPageState extends State<LoginPage> {
       height: MediaQuery.of(context).size.height,
       child: Stack(
         children: <Widget>[
+          Positioned(
+              top: -MediaQuery.of(context).size.height * .15,
+              right: -MediaQuery.of(context).size.width * .4,
+              child: BezierContainer()),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -346,10 +353,6 @@ class _LoginPageState extends State<LoginPage> {
             child: _createAccountLabel(),
           ),
           Positioned(top: 40, left: 0, child: _backButton()),
-          Positioned(
-              top: -MediaQuery.of(context).size.height * .15,
-              right: -MediaQuery.of(context).size.width * .4,
-              child: BezierContainer())
         ],
       ),
     )));

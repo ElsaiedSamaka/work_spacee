@@ -3,14 +3,14 @@ import 'package:shimmer/shimmer.dart';
 
 // import 'dart:async';
 
-class SplachScreen extends StatefulWidget {
-  SplachScreen({Key key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  SplashScreen({Key key}) : super(key: key);
 
   @override
-  _SplachScreenState createState() => _SplachScreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplachScreenState extends State<SplachScreen> {
+class _SplashScreenState extends State<SplashScreen> {
   // @override
   // void initState() {
   //   super.initState();
